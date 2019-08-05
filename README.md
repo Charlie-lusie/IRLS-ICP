@@ -1,7 +1,7 @@
 # IRLS-ICP
 An IRLS-ICP implementation based on PCL
  
-##Usage
+## Usage
 You can directly replace **"registration"** folder in path: **"your-path\PCL 1.8.0\include\pcl-1.8\pcl\registration"** of your PCL path. Example code can be like this:
 
 ```C++
@@ -18,11 +18,14 @@ You can directly replace **"registration"** folder in path: **"your-path\PCL 1.8
 ```
 ## Details
 Welsh weight function is used in this implementation, which is:
-$$w = e^{-(\frac{x}{c})^2}$$
-Where c is suggested as $c = \lambda (1.9*median(dis)),\lambda=4.7536$
+
+>$$w = e^{-(\frac{x}{c})^2}$$
+
+Where, c is suggested as
+>$c = \lambda (1.9*median(dis)),\lambda=4.7536$
 
 
-##Reference
+## Reference
 
 - BergstroM, Per, and O. Edlund. "Robust registration of point sets using iteratively reweighted least squares." Computational Optimization and Applications 58.3(2014):543-561.
 - Zhengyou Zhang. "Parameter estimation techniques: a tutorial with application to conic fitting".
