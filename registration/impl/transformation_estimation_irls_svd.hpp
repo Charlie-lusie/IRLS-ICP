@@ -153,7 +153,8 @@ pcl::registration::TransformationEstimationIRLSSVD<PointSource, PointTarget, Sca
   for (int i = 0; i < weights.cols(); i++)
   {
 	  //std::cout << correspondences[i].distance << std::endl;
-	  //ÕâÀï·¢ÏÖcorrespondencesÀïÃæµÄ¾àÀë²¢²»ÊÇ¶ÔÓ¦µãµÄ¾àÀë£¬Ó¦¸ÃÀàËÆÓÚÄ³ÖÖÆ½¾ù¾àÀë»ò¼ÓÈ¨ÖµÖ®Àà
+	  //Here I found that distances in "correspondences" are not distances between corresoindent points
+	  //They are some kinds of average distances or weights
 	  weights(0, i) = (exp(-(distance[i] / mid)*(distance[i] / mid)));
 	  weights(1, i) = weights(0, i);
 	  weights(2, i) = weights(0, i);
@@ -211,7 +212,7 @@ pcl::registration::TransformationEstimationIRLSSVD<PointSource, PointTarget, Sca
 
     //compute3DCentroid (source_it, centroid_src);
     //compute3DCentroid (target_it, centroid_tgt);
-    //source_it.reset (); target_it.reset ();//reset Ö¸½«Ö¸ÕëÖ¸ÏòÊý¾Ý¿ªÍ·
+    //source_it.reset (); target_it.reset ();//reset æŒ‡å°†æŒ‡é’ˆæŒ‡å‘æ•°æ®å¼€å¤´
 
     // Subtract the centroids from source, target
     Eigen::Matrix<Scalar, Eigen::Dynamic, Eigen::Dynamic> cloud_src_demean, cloud_tgt_demean;
@@ -234,7 +235,7 @@ pcl::registration::TransformationEstimationIRLSSVD<PointSource, PointTarget, Sca
 		cloud_tgt_demean(2, i) = target_it->z;
 		++target_it;
 	}
-	source_it.reset(); target_it.reset();//reset Ö¸½«Ö¸ÕëÖ¸ÏòÊý¾Ý¿ªÍ·
+	source_it.reset(); target_it.reset();
 
 	//demeanPointCloud (source_it, centroid_src, cloud_src_demean);
     //demeanPointCloud (target_it, centroid_tgt, cloud_tgt_demean);
