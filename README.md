@@ -19,10 +19,9 @@ You can directly replace **"registration"** folder in path: **"your-path\PCL 1.8
 ## Details
 Welsh weight function is used in this implementation, which is:
 
->$$w = e^{-(\frac{x}{c})^2}$$
+$$w = e^{-(\frac{x}{c})^2}$$
 
-Where, c is suggested as
->$c = \lambda (1.9*median(dis)),\lambda=4.7536$
+Where, c is suggested as $c = \lambda (1.9*median(dis)),\lambda=4.7536$
 
 
 ## Reference
